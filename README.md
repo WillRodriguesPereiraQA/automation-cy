@@ -119,8 +119,6 @@ O pipeline está configurado em `.github/workflows/cypress.yml` e executa automa
 ## Evidências
 <img width="1332" height="952" alt="Captura de tela 2026-07-07 131022" src="https://github.com/user-attachments/assets/defb3a9e-d30e-4fb8-802d-36028cad8b49" />
 
-<img width="1908" height="857" alt="Captura de tela 2026-07-07 130812" src="https://github.com/user-attachments/assets/479d4f21-3c4f-4298-a0eb-01fd977b3c38" />
-
 [report.pdf](https://github.com/user-attachments/files/30195259/report.pdf)
 
 
