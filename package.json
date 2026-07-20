@@ -1,0 +1,45 @@
+{
+  "name": "cypress-javascript-automation",
+  "version": "1.0.0",
+  "description": "Testes automatizados E2E e API para ServeRest com Cypress e BDD (Gherkin)",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:frontend": "cypress run --spec \"cypress/e2e/frontend/**/*.feature\"",
+    "test:api": "cypress run --spec \"cypress/e2e/api/**/*.feature\"",
+    "test": "cypress run",
+    "report:generate": "node scripts/generate-report.js",
+    "test:report": "cypress run --reporter mochawesome --reporter-options \"reportDir=cypress/reports,overwrite=false,html=false,json=true\" && npm run report:generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WillRodriguesPereiraQA/cypress-javascript-automation.git"
+  },
+  "keywords": [
+    "cypress",
+    "bdd",
+    "gherkin",
+    "serverest",
+    "e2e",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "@faker-js/faker": "^9.8.0",
+    "cypress": "^14.4.1",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/support/step_definitions/**/*.{js,ts}"
+    ],
+    "filterSpecs": true,
+    "omitFiltered": true
+  }
+}
