@@ -1,0 +1,62 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  cypress-tests:
+    name: Executar testes E2E e API
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Instalar binário do Cypress
+        run: npx cypress install
+
+      - name: Executar testes e gerar relatório HTML
+        run: npm run test:report
+
+      - name: Publicar relatório HTML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-html-report
+          path: cypress/reports/html/
+          retention-days: 14
+
+      - name: Publicar screenshots de falhas
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/
+          retention-days: 14
+
+      - name: Publicar vídeos de falhas
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos/
+          retention-days: 14
+          if-no-files-found: ignore
