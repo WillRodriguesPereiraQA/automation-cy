@@ -117,7 +117,7 @@ O pipeline está configurado em `.github/workflows/cypress.yml` e executa automa
 - **Sincronização**: uso de interceptações implícitas do Cypress e asserções com retry automático
 
 ## Evidências
-<img width="1332" height="952" alt="Captura de tela 2026-07-07 131022" src="https://github.com/user-attachments/assets/defb3a9e-d30e-4fb8-802d-36028cad8b49" />
+<img width="1540" height="1005" alt="Captura de tela 2026-07-20 124628" src="https://github.com/user-attachments/assets/1a92bd69-d369-45bf-a40f-f15a639a5e6d" />
 
 [report.pdf](https://github.com/user-attachments/files/30195259/report.pdf)
 
